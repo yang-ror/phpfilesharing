@@ -27,6 +27,9 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
 		}
+		#title {
+			font-size: 2em;
+		}
 		form, #invalid {
 			display: flex;
 			flex-direction: column;
@@ -41,6 +44,10 @@
 	<?php
 		function list_files($directory_name) {
 			$files = array();
+
+			if($directory_name == '')
+				return $files;
+			
 			$dir = "./$directory_name";
 			if (is_dir($dir)) {
 				$scanned_directory = array_diff(scandir($dir), array('..', '.'));
@@ -72,27 +79,13 @@
 				echo "</ol>";
 			}
 		} else {
-			echo '<div>🍊🐑</div>
-			<form onsubmit="redirectToDirectory()">
+			echo '<div id="title">🍊🐑</div>
+			<form>
 				<label for="code">Enter your code:</label>
 				<input type="text" id="code" name="code"">
 				<button type="submit" id="submitButton">Go</button>
 			</form>';
 		}
-
 	?>
-	<script type="text/javascript">
-		function redirectToDirectory() {
-			const userInput = document.getElementById("code").value
-			console.log(userInput)
-
-			if(!userInput) return
-
-			window.location.href = "/" + userInput
-		}
-		// document.addEventListener('DOMContentLoaded', function() {
-		// 	checkInputLength()
-		// })
-	</script>
 </body>
 </html>
