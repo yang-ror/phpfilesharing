@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Orange Sheep</title>
+	<title>🍊🐑</title>
 	<style>
 		:root {
             --primary-color: #2a64b0;
@@ -20,6 +20,8 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			flex-direction: column;
+			align-items: center;
 			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
                 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
             -webkit-font-smoothing: antialiased;
@@ -56,9 +58,11 @@
 			$files = list_files($code);
 
 			if (count($files) == 0) {
+				echo "<div>❌</div>";
 				echo "<div id='invalid'><div>Invalid Code.</div>";
 				echo "<button onclick='history.back()'>Back</button></div>";
 			} else {
+				echo "<div>❤️🌧️👨‍👩‍👦⛵️</div>";
 				echo "<ol>";
 
 				foreach ($files as $file) {
@@ -68,7 +72,8 @@
 				echo "</ol>";
 			}
 		} else {
-			echo '<form onsubmit="redirectToDirectory()">
+			echo '<div>🍊🐑</div>
+			<form onsubmit="redirectToDirectory()">
 				<label for="code">Enter your code:</label>
 				<input type="text" id="code" name="code"">
 				<button type="submit" id="submitButton">Go</button>
@@ -78,9 +83,12 @@
 	?>
 	<script type="text/javascript">
 		function redirectToDirectory() {
-			const userInput = document.getElementById("code").value;
-			window.location.href = "/" + userInput;
-			return false;
+			const userInput = document.getElementById("code").value
+			console.log(userInput)
+
+			if(!userInput) return
+
+			window.location.href = "/" + userInput
 		}
 		// document.addEventListener('DOMContentLoaded', function() {
 		// 	checkInputLength()
