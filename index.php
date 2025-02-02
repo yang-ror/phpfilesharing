@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<title>🍊🐑</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<style>
 		:root {
             --primary-color: #2a64b0;
